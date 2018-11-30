@@ -4,7 +4,8 @@
 \alias{search_company}
 \title{Search company}
 \usage{
-search_company(string, endpoint = "https://sirene.entreprise.api.gouv.fr")
+search_company(string,
+  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1")
 }
 \arguments{
 \item{string}{a company name as a string}

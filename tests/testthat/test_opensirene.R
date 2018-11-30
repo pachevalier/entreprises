@@ -1,5 +1,5 @@
-library("opensirene")
-context(desc = "Testing open sirene")
+library("entreprises")
+context(desc = "Testing entreprises")
 
 test_that(
   desc = "get_company returns a list",

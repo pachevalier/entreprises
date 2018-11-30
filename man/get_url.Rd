@@ -4,7 +4,7 @@
 \alias{get_url}
 \title{Get url of Sirene API User interface}
 \usage{
-get_url(siret, endpoint = "https://sirene.entreprise.api.gouv.fr")
+get_url(siret, endpoint = "https://entreprise.data.gouv.fr")
 }
 \arguments{
 \item{siret}{a valid siret number as a string}
@@ -19,10 +19,10 @@ Get url of Sirene API User interface
 }
 \examples{
 
-get_url(siret = "79101208100018")
+get_url(siret = "38235772100028")
 
 \dontrun{
-browseURL(get_url(siret = "79101208100018"))
+browseURL(get_url(siret = "38235772100028"))
 }
 
 }

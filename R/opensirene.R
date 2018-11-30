@@ -8,11 +8,11 @@
 #'
 #' @examples
 #'
-#' get_company(siret = "79101208100018")
+#' get_company(siret = "38235772100028")
 #'
 get_company <- function(
   siret,
-  endpoint = "https://sirene.entreprise.api.gouv.fr") {
+  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1") {
   magrittr::extract2(
     httr::content(
       httr::GET(
@@ -33,14 +33,14 @@ get_company <- function(
 #'
 #' @examples
 #'
-#' get_url(siret = "79101208100018")
+#' get_url(siret = "38235772100028")
 #'
 #' \dontrun{
-#' browseURL(get_url(siret = "79101208100018"))
+#' browseURL(get_url(siret = "38235772100028"))
 #' }
 #'
-get_url <- function(siret, endpoint = "https://sirene.entreprise.api.gouv.fr") {
-  paste0(endpoint, "/#/entreprise/", siret)
+get_url <- function(siret, endpoint = "https://entreprise.data.gouv.fr") {
+  paste0(endpoint, "/etablissement/", siret)
 }
 
 #' Search company
@@ -60,7 +60,7 @@ get_url <- function(siret, endpoint = "https://sirene.entreprise.api.gouv.fr") {
 #'
 search_company <- function(
   string,
-  endpoint = "https://sirene.entreprise.api.gouv.fr") {
+  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1") {
 
   paste0(endpoint, "/full_text/", string) %>%
     httr::GET() %>%
