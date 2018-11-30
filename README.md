@@ -1,13 +1,5 @@
-# OpenSirene
+# entreprises
 
-R Client for the SIRENE API
+R client for [entreprise.data.gouv.fr](https://entreprise.data.gouv.fr/)
 
 
-
-`
-get_company(siret = "79101208100018")
-`
-
-`
-browseURL(get_url(siret = "79101208100018"))
-`
