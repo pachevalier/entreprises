@@ -36,7 +36,7 @@ get_company <- function(
 #' get_url(siret = "38235772100028")
 #'
 #' \dontrun{
-#' browseURL(get_url(siret = "38235772100028"))
+#' get_url(siret = "38235772100028") %>% httr::BROWSE()
 #' }
 #'
 get_url <- function(siret, endpoint = "https://entreprise.data.gouv.fr") {

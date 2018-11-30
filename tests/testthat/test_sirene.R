@@ -4,7 +4,7 @@ context(desc = "Testing entreprises")
 test_that(
   desc = "get_company returns a list",
   code = expect_is(
-    object = get_company(siret = "79101208100018"),
+    object = get_company(siret = "38235772100028"),
     class = "list"
     )
   )
@@ -12,7 +12,7 @@ test_that(
 test_that(
   desc = "get_url returns a string",
   code = expect_is(
-    object = get_url(siret = "79101208100018"),
+    object = get_url(siret = "38235772100028"),
     class = "character"
   )
 )

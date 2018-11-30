@@ -1,4 +1,3 @@
 library(testthat)
-library(opensirene)
-
-test_check("opensirene")
+library(entreprises)
+test_check("entreprises")
