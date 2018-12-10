@@ -1,5 +1,5 @@
 ---
-title: "entreprises"
+title: "Entreprises"
 author: "Paul-Antoine Chevalier"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -19,19 +19,20 @@ library(tibble)
 library(dplyr)
 ```
 
+## Get company
 
 ```{r}
 get_company(siret = "38235772100028") %>% head()
 ```
 
-## Companies nearby
+## Get companies nearby
 
 ```{r}
 get_nearby(latitude = 48.8503, longitude = 2.30831) %>%
   dplyr::glimpse()
 ```
 
-## Search companies
+## Search companies by name
 
 ```{r}
 search_company(string = "Paris Saint Germain") %>% 

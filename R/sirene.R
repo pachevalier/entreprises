@@ -51,6 +51,10 @@ get_nearby <- function(
           purrr::flatten(x)
           )
         }
+      ) %>%
+    dplyr::mutate(
+      latitude = as.numeric(latitude),
+      longitude = as.numeric(longitude)
       )
 }
 

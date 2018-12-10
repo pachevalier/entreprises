@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>entreprises • entreprises</title>
+<title>Entreprises • entreprises</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="entreprises">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Entreprises">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -61,7 +61,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>entreprises</h1>
+      <h1>Entreprises</h1>
                         <h4 class="author">Paul-Antoine Chevalier</h4>
             
             <h4 class="date">2018-12-10</h4>
@@ -73,6 +73,9 @@
 
     
     
+<div id="get-company" class="section level2">
+<h2 class="hasAnchor">
+<a href="#get-company" class="anchor"></a>Get company</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="../reference/get_company.html">get_company</a></span>(<span class="dt">siret =</span> <span class="st">"38235772100028"</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>()</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#&gt; $id</span></a>
 <a class="sourceLine" id="cb1-3" data-line-number="3"><span class="co">#&gt; [1] 144731711</span></a>
@@ -91,9 +94,10 @@
 <a class="sourceLine" id="cb1-16" data-line-number="16"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb1-17" data-line-number="17"><span class="co">#&gt; $l2_normalisee</span></a>
 <a class="sourceLine" id="cb1-18" data-line-number="18"><span class="co">#&gt; [1] "PSG"</span></a></code></pre></div>
-<div id="companies-nearby" class="section level2">
+</div>
+<div id="get-companies-nearby" class="section level2">
 <h2 class="hasAnchor">
-<a href="#companies-nearby" class="anchor"></a>Companies nearby</h2>
+<a href="#get-companies-nearby" class="anchor"></a>Get companies nearby</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="../reference/get_nearby.html">get_nearby</a></span>(<span class="dt">latitude =</span> <span class="fl">48.8503</span>, <span class="dt">longitude =</span> <span class="fl">2.30831</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/reexports.html">glimpse</a></span>()</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; Observations: 10</span></a>
@@ -169,8 +173,8 @@
 <a class="sourceLine" id="cb2-73" data-line-number="73"><span class="co">#&gt; $ date_mise_a_jour                                  &lt;chr&gt; "2017-03-01T...</span></a>
 <a class="sourceLine" id="cb2-74" data-line-number="74"><span class="co">#&gt; $ created_at                                        &lt;chr&gt; "2018-12-05T...</span></a>
 <a class="sourceLine" id="cb2-75" data-line-number="75"><span class="co">#&gt; $ updated_at                                        &lt;chr&gt; "2018-12-05T...</span></a>
-<a class="sourceLine" id="cb2-76" data-line-number="76"><span class="co">#&gt; $ longitude                                         &lt;chr&gt; "2.37373", "...</span></a>
-<a class="sourceLine" id="cb2-77" data-line-number="77"><span class="co">#&gt; $ latitude                                          &lt;chr&gt; "48.89404", ...</span></a>
+<a class="sourceLine" id="cb2-76" data-line-number="76"><span class="co">#&gt; $ longitude                                         &lt;dbl&gt; 2.373730, 2....</span></a>
+<a class="sourceLine" id="cb2-77" data-line-number="77"><span class="co">#&gt; $ latitude                                          &lt;dbl&gt; 48.89404, 48...</span></a>
 <a class="sourceLine" id="cb2-78" data-line-number="78"><span class="co">#&gt; $ geo_score                                         &lt;chr&gt; "0.95", "0.9...</span></a>
 <a class="sourceLine" id="cb2-79" data-line-number="79"><span class="co">#&gt; $ geo_type                                          &lt;chr&gt; "housenumber...</span></a>
 <a class="sourceLine" id="cb2-80" data-line-number="80"><span class="co">#&gt; $ geo_adresse                                       &lt;chr&gt; "70 Rue Curi...</span></a>
@@ -187,9 +191,9 @@
 <a class="sourceLine" id="cb2-91" data-line-number="91"><span class="co">#&gt; $ activite_principale_registre_metier               &lt;chr&gt; NA, NA, NA, ...</span></a>
 <a class="sourceLine" id="cb2-92" data-line-number="92"><span class="co">#&gt; $ l5_declaree                                       &lt;chr&gt; NA, NA, NA, ...</span></a></code></pre></div>
 </div>
-<div id="search-companies" class="section level2">
+<div id="search-companies-by-name" class="section level2">
 <h2 class="hasAnchor">
-<a href="#search-companies" class="anchor"></a>Search companies</h2>
+<a href="#search-companies-by-name" class="anchor"></a>Search companies by name</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="../reference/search_company.html">search_company</a></span>(<span class="dt">string =</span> <span class="st">"Paris Saint Germain"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span>magrittr<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/magrittr/topics/aliases">extract2</a></span>(<span class="st">"etablissement"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>tibble<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/tibble/topics/as_tibble">as_tibble</a></span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -333,8 +337,9 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#companies-nearby">Companies nearby</a></li>
-      <li><a href="#search-companies">Search companies</a></li>
+<li><a href="#get-company">Get company</a></li>
+      <li><a href="#get-companies-nearby">Get companies nearby</a></li>
+      <li><a href="#search-companies-by-name">Search companies by name</a></li>
       </ul>
 </div>
       </div>
