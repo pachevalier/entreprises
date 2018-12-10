@@ -1,0 +1,42 @@
+---
+title: "entreprises"
+author: "Paul-Antoine Chevalier"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+library(entreprises)
+library(tibble)
+library(dplyr)
+```
+
+
+```{r}
+get_company(siret = "38235772100028") %>% head()
+```
+
+## Companies nearby
+
+```{r}
+get_nearby(latitude = 48.8503, longitude = 2.30831) %>%
+  dplyr::glimpse()
+```
+
+## Search companies
+
+```{r}
+search_company(string = "Paris Saint Germain") %>% 
+  magrittr::extract2("etablissement") %>% 
+  tibble::as_tibble() %>% 
+  dplyr::glimpse()
+```
+

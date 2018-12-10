@@ -23,6 +23,37 @@ get_company <- function(
   )
 }
 
+#' Get all firms nearby a point
+#'
+#' @param latitude a double
+#' @param longitude a double
+#' @param endpoint an url
+#'
+#' @return a tibble
+#' @export
+#'
+#' @examples
+#' get_nearby(latitude = 48.8503, longitude = 2.30831)
+#'
+get_nearby <- function(
+  latitude,
+  longitude,
+  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1") {
+    httr::content(
+      httr::GET(
+        paste0(endpoint, "/near_point/", "?lat=", latitude, "&long=", longitude)
+      )
+    ) %>%
+    magrittr::extract2("etablissements") %>%
+    purrr::map_df(
+      .f = function(x) {
+        tibble::as_tibble(
+          purrr::flatten(x)
+          )
+        }
+      )
+}
+
 #' Get url of Sirene API User interface
 #'
 #' @param siret a valid siret number as a string

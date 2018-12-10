@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Search company — search_company • entreprises</title>
+<title>Get all firms nearby a point — get_nearby • entreprises</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Search company — search_company" />
+<meta property="og:title" content="Get all firms nearby a point — get_nearby" />
 
-<meta property="og:description" content="search company by name" />
+<meta property="og:description" content="Get all firms nearby a point" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,119 +97,97 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Search company</h1>
+    <h1>Get all firms nearby a point</h1>
     
-    <div class="hidden name"><code>search_company.Rd</code></div>
+    <div class="hidden name"><code>get_nearby.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>search company by name</p>
+    <p>Get all firms nearby a point</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>search_company</span>(<span class='no'>string</span>,
+    <pre class="usage"><span class='fu'>get_nearby</span>(<span class='no'>latitude</span>, <span class='no'>longitude</span>,
   <span class='kw'>endpoint</span> <span class='kw'>=</span> <span class='st'>"https://entreprise.data.gouv.fr/api/sirene/v1"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>string</th>
-      <td><p>a company name as a string</p></td>
+      <th>latitude</th>
+      <td><p>a double</p></td>
+    </tr>
+    <tr>
+      <th>longitude</th>
+      <td><p>a double</p></td>
     </tr>
     <tr>
       <th>endpoint</th>
-      <td><p>API endpoint</p></td>
+      <td><p>an url</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a list</p>
+    <p>a tibble</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>search_company</span>(<span class='kw'>string</span> <span class='kw'>=</span> <span class='st'>"dataiku"</span>)</div><div class='output co'>#&gt; $total_results
-#&gt; [1] 1
-#&gt; 
-#&gt; $total_pages
-#&gt; [1] 1
-#&gt; 
-#&gt; $per_page
-#&gt; [1] 10
-#&gt; 
-#&gt; $page
-#&gt; [1] 1
-#&gt; 
-#&gt; $etablissement
-#&gt; # A tibble: 1 x 129
-#&gt;       id siren siret nic   l1_normalisee l2_normalisee l3_normalisee
-#&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        
-#&gt; 1 1.44e8 7910… 7910… 00034 DATAIKU       DAITAKU       2 6          
-#&gt; # ... with 122 more variables: l4_normalisee &lt;chr&gt;, l5_normalisee &lt;lgl&gt;,
-#&gt; #   l6_normalisee &lt;chr&gt;, l7_normalisee &lt;chr&gt;, l1_declaree &lt;chr&gt;,
-#&gt; #   l2_declaree &lt;chr&gt;, l3_declaree &lt;chr&gt;, l4_declaree &lt;chr&gt;, l5_declaree &lt;lgl&gt;,
-#&gt; #   l6_declaree &lt;chr&gt;, l7_declaree &lt;lgl&gt;, numero_voie &lt;chr&gt;,
-#&gt; #   indice_repetition &lt;lgl&gt;, type_voie &lt;chr&gt;, libelle_voie &lt;chr&gt;,
-#&gt; #   code_postal &lt;chr&gt;, cedex &lt;lgl&gt;, region &lt;chr&gt;, libelle_region &lt;chr&gt;,
-#&gt; #   departement &lt;chr&gt;, arrondissement &lt;chr&gt;, canton &lt;lgl&gt;, commune &lt;chr&gt;,
-#&gt; #   libelle_commune &lt;chr&gt;, departement_unite_urbaine &lt;chr&gt;,
-#&gt; #   taille_unite_urbaine &lt;chr&gt;, numero_unite_urbaine &lt;chr&gt;,
+    <pre class="examples"><div class='input'><span class='fu'>get_nearby</span>(<span class='kw'>latitude</span> <span class='kw'>=</span> <span class='fl'>48.8503</span>, <span class='kw'>longitude</span> <span class='kw'>=</span> <span class='fl'>2.30831</span>)</div><div class='output co'>#&gt; # A tibble: 10 x 88
+#&gt;        id siren siret nic   l1_normalisee l2_normalisee l4_normalisee
+#&gt;     &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        
+#&gt;  1 1.44e8 8245… 8245… 00014 MYACINE       LE CAFE DE L… 70 RUE CURIAL
+#&gt;  2 1.44e8 8245… 8245… 00014 MEDIA TODAY   &lt;NA&gt;          21 RUE CURIAL
+#&gt;  3 1.44e8 8245… 8245… 00017 SYLLEPSE CON… &lt;NA&gt;          41 AVENUE MA…
+#&gt;  4 1.44e8 8245… 8245… 00012 MONSIEUR SEB… BOITE LETTRE… 199 RUE DE C…
+#&gt;  5 1.44e8 8246… 8246… 00010 LINIA ARCHIT… &lt;NA&gt;          55 AVENUE JE…
+#&gt;  6 1.44e8 8246… 8246… 00012 MADAME AUDRE… &lt;NA&gt;          1 IMPASSE DE…
+#&gt;  7 1.44e8 8246… 8246… 00015 BO HE ME      &lt;NA&gt;          78 RUE D AUB…
+#&gt;  8 1.44e8 8246… 8246… 00017 MONSIEUR MOH… &lt;NA&gt;          12 RUE LALLY…
+#&gt;  9 1.44e8 8246… 8246… 00013 MONSIEUR ALI… &lt;NA&gt;          57 QUAI DE L…
+#&gt; 10 1.44e8 8246… 8246… 00015 SASU BONGAM … &lt;NA&gt;          32 RUE BOURET
+#&gt; # ... with 81 more variables: l6_normalisee &lt;chr&gt;, l7_normalisee &lt;chr&gt;,
+#&gt; #   l1_declaree &lt;chr&gt;, l2_declaree &lt;chr&gt;, l4_declaree &lt;chr&gt;, l6_declaree &lt;chr&gt;,
+#&gt; #   numero_voie &lt;chr&gt;, type_voie &lt;chr&gt;, libelle_voie &lt;chr&gt;, code_postal &lt;chr&gt;,
+#&gt; #   region &lt;chr&gt;, libelle_region &lt;chr&gt;, departement &lt;chr&gt;,
+#&gt; #   arrondissement &lt;chr&gt;, commune &lt;chr&gt;, libelle_commune &lt;chr&gt;,
+#&gt; #   departement_unite_urbaine &lt;chr&gt;, taille_unite_urbaine &lt;chr&gt;,
+#&gt; #   numero_unite_urbaine &lt;chr&gt;,
 #&gt; #   etablissement_public_cooperation_intercommunale &lt;chr&gt;,
 #&gt; #   tranche_commune_detaillee &lt;chr&gt;, zone_emploi &lt;chr&gt;, is_siege &lt;chr&gt;,
-#&gt; #   enseigne &lt;lgl&gt;, indicateur_champ_publipostage &lt;chr&gt;,
+#&gt; #   enseigne &lt;chr&gt;, indicateur_champ_publipostage &lt;chr&gt;,
 #&gt; #   statut_prospection &lt;chr&gt;, date_introduction_base_diffusion &lt;chr&gt;,
-#&gt; #   nature_entrepreneur_individuel &lt;lgl&gt;,
-#&gt; #   libelle_nature_entrepreneur_individuel &lt;lgl&gt;, activite_principale &lt;chr&gt;,
-#&gt; #   libelle_activite_principale &lt;chr&gt;, date_validite_activite_principale &lt;lgl&gt;,
+#&gt; #   activite_principale &lt;chr&gt;, libelle_activite_principale &lt;chr&gt;,
 #&gt; #   tranche_effectif_salarie &lt;chr&gt;, libelle_tranche_effectif_salarie &lt;chr&gt;,
 #&gt; #   tranche_effectif_salarie_centaine_pret &lt;chr&gt;,
 #&gt; #   date_validite_effectif_salarie &lt;chr&gt;, origine_creation &lt;chr&gt;,
 #&gt; #   date_creation &lt;chr&gt;, date_debut_activite &lt;chr&gt;, nature_activite &lt;chr&gt;,
-#&gt; #   lieu_activite &lt;chr&gt;, type_magasin &lt;lgl&gt;, is_saisonnier &lt;chr&gt;,
+#&gt; #   lieu_activite &lt;chr&gt;, is_saisonnier &lt;chr&gt;,
 #&gt; #   modalite_activite_principale &lt;chr&gt;, caractere_productif &lt;chr&gt;,
-#&gt; #   participation_particuliere_production &lt;lgl&gt;, caractere_auxiliaire &lt;chr&gt;,
-#&gt; #   nom_raison_sociale &lt;chr&gt;, sigle &lt;lgl&gt;, nom &lt;lgl&gt;, prenom &lt;lgl&gt;,
-#&gt; #   civilite &lt;lgl&gt;, numero_rna &lt;lgl&gt;, nic_siege &lt;chr&gt;, region_siege &lt;chr&gt;,
-#&gt; #   departement_commune_siege &lt;chr&gt;, email &lt;lgl&gt;,
-#&gt; #   nature_juridique_entreprise &lt;chr&gt;,
+#&gt; #   participation_particuliere_production &lt;chr&gt;, caractere_auxiliaire &lt;chr&gt;,
+#&gt; #   nom_raison_sociale &lt;chr&gt;, nic_siege &lt;chr&gt;, region_siege &lt;chr&gt;,
+#&gt; #   departement_commune_siege &lt;chr&gt;, nature_juridique_entreprise &lt;chr&gt;,
 #&gt; #   libelle_nature_juridique_entreprise &lt;chr&gt;,
 #&gt; #   activite_principale_entreprise &lt;chr&gt;,
 #&gt; #   libelle_activite_principale_entreprise &lt;chr&gt;,
 #&gt; #   date_validite_activite_principale_entreprise &lt;chr&gt;,
-#&gt; #   activite_principale_registre_metier &lt;lgl&gt;, is_ess &lt;lgl&gt;, date_ess &lt;lgl&gt;,
 #&gt; #   tranche_effectif_salarie_entreprise &lt;chr&gt;,
 #&gt; #   libelle_tranche_effectif_salarie_entreprise &lt;chr&gt;,
 #&gt; #   tranche_effectif_salarie_entreprise_centaine_pret &lt;chr&gt;,
 #&gt; #   date_validite_effectif_salarie_entreprise &lt;chr&gt;,
-#&gt; #   categorie_entreprise &lt;chr&gt;, date_creation_entreprise &lt;chr&gt;,
+#&gt; #   date_creation_entreprise &lt;chr&gt;,
 #&gt; #   date_introduction_base_diffusion_entreprise &lt;chr&gt;,
 #&gt; #   indice_monoactivite_entreprise &lt;chr&gt;,
 #&gt; #   modalite_activite_principale_entreprise &lt;chr&gt;,
-#&gt; #   caractere_productif_entreprise &lt;chr&gt;,
-#&gt; #   date_validite_rubrique_niveau_entreprise_esa &lt;lgl&gt;,
-#&gt; #   tranche_chiffre_affaire_entreprise_esa &lt;lgl&gt;,
-#&gt; #   activite_principale_entreprise_esa &lt;lgl&gt;,
-#&gt; #   premiere_activite_secondaire_entreprise_esa &lt;lgl&gt;,
-#&gt; #   deuxieme_activite_secondaire_entreprise_esa &lt;lgl&gt;,
-#&gt; #   troisieme_activite_secondaire_entreprise_esa &lt;lgl&gt;,
-#&gt; #   quatrieme_activite_secondaire_entreprise_esa &lt;lgl&gt;,
-#&gt; #   nature_mise_a_jour &lt;lgl&gt;, indicateur_mise_a_jour_1 &lt;lgl&gt;,
-#&gt; #   indicateur_mise_a_jour_2 &lt;lgl&gt;, indicateur_mise_a_jour_3 &lt;lgl&gt;,
-#&gt; #   date_mise_a_jour &lt;chr&gt;, type_evenement &lt;lgl&gt;, date_evenement &lt;lgl&gt;,
-#&gt; #   type_creation &lt;lgl&gt;, date_reactivation_etablissement &lt;lgl&gt;,
-#&gt; #   date_reactivation_entreprise &lt;lgl&gt;, …
-#&gt; 
-#&gt; $spellcheck
-#&gt; NULL
-#&gt; 
-#&gt; $suggestions
-#&gt; $suggestions[[1]]
-#&gt; [1] "dataiku"
-#&gt; 
-#&gt; </div><div class='input'>
+#&gt; #   caractere_productif_entreprise &lt;chr&gt;, date_mise_a_jour &lt;chr&gt;,
+#&gt; #   created_at &lt;chr&gt;, updated_at &lt;chr&gt;, longitude &lt;chr&gt;, latitude &lt;chr&gt;,
+#&gt; #   geo_score &lt;chr&gt;, geo_type &lt;chr&gt;, geo_adresse &lt;chr&gt;, geo_id &lt;chr&gt;,
+#&gt; #   geo_ligne &lt;chr&gt;, sigle &lt;chr&gt;, l3_normalisee &lt;chr&gt;, l3_declaree &lt;chr&gt;,
+#&gt; #   nature_entrepreneur_individuel &lt;chr&gt;,
+#&gt; #   libelle_nature_entrepreneur_individuel &lt;chr&gt;, nom &lt;chr&gt;, prenom &lt;chr&gt;,
+#&gt; #   civilite &lt;chr&gt;, activite_principale_registre_metier &lt;chr&gt;,
+#&gt; #   l5_declaree &lt;chr&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
