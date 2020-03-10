@@ -4,8 +4,7 @@
 \alias{get_company}
 \title{Get company}
 \usage{
-get_company(siret,
-  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1")
+get_company(siret, endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1")
 }
 \arguments{
 \item{siret}{a valid siret number}

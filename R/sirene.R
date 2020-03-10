@@ -1,3 +1,27 @@
+
+#' Get unite legale
+#'
+#' @param siren a valid siren number (9 digits)
+#' @param endpoint url of the API
+#'
+#' @return a tibble
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' get_unitelegale(siren = "382357721")
+#' }
+#'
+get_unitelegale <- function(siren, endpoint = "https://entreprise.data.gouv.fr/api/sirene/") {
+  paste0(endpoint, "v3/unites_legales/", siren) %>%
+    httr::GET() %>%
+    httr::content() %>%
+    magrittr::extract2("unite_legale") %>%
+    purrr::discard(.p = is.list) %>%
+    purrr::map_if(.p = is.null, .f = function(x) {x = ""}) %>%
+    tibble::as_tibble()
+}
+
 #' Get company
 #'
 #' @param siret a valid siret number

@@ -8,21 +8,25 @@
 
 <title>Search company — search_company • entreprises</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Search company — search_company" />
 
+<meta property="og:title" content="Search company — search_company" />
 <meta property="og:description" content="search company by name" />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -45,6 +50,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 
   </head>
@@ -71,7 +77,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,7 +88,6 @@
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         
       </ul>
@@ -92,6 +97,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -103,14 +109,14 @@
     </div>
 
     <div class="ref-description">
-    
     <p>search company by name</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>search_company</span>(<span class='no'>string</span>,
-  <span class='kw'>endpoint</span> <span class='kw'>=</span> <span class='st'>"https://entreprise.data.gouv.fr/api/sirene/v1"</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>search_company</span>(
+  <span class='no'>string</span>,
+  <span class='kw'>endpoint</span> <span class='kw'>=</span> <span class='st'>"https://entreprise.data.gouv.fr/api/sirene/v1"</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -123,11 +129,10 @@
       <td><p>API endpoint</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>a list</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -144,33 +149,33 @@
 #&gt; [1] 1
 #&gt; 
 #&gt; $etablissement
-#&gt; # A tibble: 1 x 129
+#&gt; # A tibble: 1 x 113
 #&gt;       id siren siret nic   l1_normalisee l2_normalisee l3_normalisee
-#&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;        
-#&gt; 1 1.44e8 7910… 7910… 00034 DATAIKU       DAITAKU       2 6          
-#&gt; # ... with 122 more variables: l4_normalisee &lt;chr&gt;, l5_normalisee &lt;lgl&gt;,
-#&gt; #   l6_normalisee &lt;chr&gt;, l7_normalisee &lt;chr&gt;, l1_declaree &lt;chr&gt;,
-#&gt; #   l2_declaree &lt;chr&gt;, l3_declaree &lt;chr&gt;, l4_declaree &lt;chr&gt;, l5_declaree &lt;lgl&gt;,
+#&gt;    &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;lgl&gt;        
+#&gt; 1 1.33e8 7910… 7910… 00042 DATAIKU       201 203       NA           
+#&gt; # … with 106 more variables: l4_normalisee &lt;chr&gt;, l5_normalisee &lt;lgl&gt;,
+#&gt; #   l6_normalisee &lt;chr&gt;, l7_normalisee &lt;lgl&gt;, l1_declaree &lt;lgl&gt;,
+#&gt; #   l2_declaree &lt;lgl&gt;, l3_declaree &lt;lgl&gt;, l4_declaree &lt;chr&gt;, l5_declaree &lt;lgl&gt;,
 #&gt; #   l6_declaree &lt;chr&gt;, l7_declaree &lt;lgl&gt;, numero_voie &lt;chr&gt;,
 #&gt; #   indice_repetition &lt;lgl&gt;, type_voie &lt;chr&gt;, libelle_voie &lt;chr&gt;,
-#&gt; #   code_postal &lt;chr&gt;, cedex &lt;lgl&gt;, region &lt;chr&gt;, libelle_region &lt;chr&gt;,
+#&gt; #   code_postal &lt;chr&gt;, cedex &lt;lgl&gt;, region &lt;chr&gt;, libelle_region &lt;lgl&gt;,
 #&gt; #   departement &lt;chr&gt;, arrondissement &lt;chr&gt;, canton &lt;lgl&gt;, commune &lt;chr&gt;,
-#&gt; #   libelle_commune &lt;chr&gt;, departement_unite_urbaine &lt;chr&gt;,
-#&gt; #   taille_unite_urbaine &lt;chr&gt;, numero_unite_urbaine &lt;chr&gt;,
-#&gt; #   etablissement_public_cooperation_intercommunale &lt;chr&gt;,
-#&gt; #   tranche_commune_detaillee &lt;chr&gt;, zone_emploi &lt;chr&gt;, is_siege &lt;chr&gt;,
+#&gt; #   libelle_commune &lt;chr&gt;, departement_unite_urbaine &lt;lgl&gt;,
+#&gt; #   taille_unite_urbaine &lt;lgl&gt;, numero_unite_urbaine &lt;lgl&gt;,
+#&gt; #   etablissement_public_cooperation_intercommunale &lt;lgl&gt;,
+#&gt; #   tranche_commune_detaillee &lt;chr&gt;, zone_emploi &lt;lgl&gt;, is_siege &lt;chr&gt;,
 #&gt; #   enseigne &lt;lgl&gt;, indicateur_champ_publipostage &lt;chr&gt;,
-#&gt; #   statut_prospection &lt;chr&gt;, date_introduction_base_diffusion &lt;chr&gt;,
+#&gt; #   statut_prospection &lt;lgl&gt;, date_introduction_base_diffusion &lt;chr&gt;,
 #&gt; #   nature_entrepreneur_individuel &lt;lgl&gt;,
 #&gt; #   libelle_nature_entrepreneur_individuel &lt;lgl&gt;, activite_principale &lt;chr&gt;,
 #&gt; #   libelle_activite_principale &lt;chr&gt;, date_validite_activite_principale &lt;lgl&gt;,
-#&gt; #   tranche_effectif_salarie &lt;chr&gt;, libelle_tranche_effectif_salarie &lt;chr&gt;,
-#&gt; #   tranche_effectif_salarie_centaine_pret &lt;chr&gt;,
-#&gt; #   date_validite_effectif_salarie &lt;chr&gt;, origine_creation &lt;chr&gt;,
-#&gt; #   date_creation &lt;chr&gt;, date_debut_activite &lt;chr&gt;, nature_activite &lt;chr&gt;,
-#&gt; #   lieu_activite &lt;chr&gt;, type_magasin &lt;lgl&gt;, is_saisonnier &lt;chr&gt;,
-#&gt; #   modalite_activite_principale &lt;chr&gt;, caractere_productif &lt;chr&gt;,
-#&gt; #   participation_particuliere_production &lt;lgl&gt;, caractere_auxiliaire &lt;chr&gt;,
+#&gt; #   tranche_effectif_salarie &lt;lgl&gt;, libelle_tranche_effectif_salarie &lt;lgl&gt;,
+#&gt; #   tranche_effectif_salarie_centaine_pret &lt;lgl&gt;,
+#&gt; #   date_validite_effectif_salarie &lt;lgl&gt;, origine_creation &lt;lgl&gt;,
+#&gt; #   date_creation &lt;chr&gt;, date_debut_activite &lt;chr&gt;, nature_activite &lt;lgl&gt;,
+#&gt; #   lieu_activite &lt;lgl&gt;, type_magasin &lt;lgl&gt;, is_saisonnier &lt;lgl&gt;,
+#&gt; #   modalite_activite_principale &lt;lgl&gt;, caractere_productif &lt;lgl&gt;,
+#&gt; #   participation_particuliere_production &lt;lgl&gt;, caractere_auxiliaire &lt;lgl&gt;,
 #&gt; #   nom_raison_sociale &lt;chr&gt;, sigle &lt;lgl&gt;, nom &lt;lgl&gt;, prenom &lt;lgl&gt;,
 #&gt; #   civilite &lt;lgl&gt;, numero_rna &lt;lgl&gt;, nic_siege &lt;chr&gt;, region_siege &lt;chr&gt;,
 #&gt; #   departement_commune_siege &lt;chr&gt;, email &lt;lgl&gt;,
@@ -178,17 +183,17 @@
 #&gt; #   libelle_nature_juridique_entreprise &lt;chr&gt;,
 #&gt; #   activite_principale_entreprise &lt;chr&gt;,
 #&gt; #   libelle_activite_principale_entreprise &lt;chr&gt;,
-#&gt; #   date_validite_activite_principale_entreprise &lt;chr&gt;,
+#&gt; #   date_validite_activite_principale_entreprise &lt;lgl&gt;,
 #&gt; #   activite_principale_registre_metier &lt;lgl&gt;, is_ess &lt;lgl&gt;, date_ess &lt;lgl&gt;,
 #&gt; #   tranche_effectif_salarie_entreprise &lt;chr&gt;,
-#&gt; #   libelle_tranche_effectif_salarie_entreprise &lt;chr&gt;,
-#&gt; #   tranche_effectif_salarie_entreprise_centaine_pret &lt;chr&gt;,
+#&gt; #   libelle_tranche_effectif_salarie_entreprise &lt;lgl&gt;,
+#&gt; #   tranche_effectif_salarie_entreprise_centaine_pret &lt;lgl&gt;,
 #&gt; #   date_validite_effectif_salarie_entreprise &lt;chr&gt;,
 #&gt; #   categorie_entreprise &lt;chr&gt;, date_creation_entreprise &lt;chr&gt;,
 #&gt; #   date_introduction_base_diffusion_entreprise &lt;chr&gt;,
-#&gt; #   indice_monoactivite_entreprise &lt;chr&gt;,
-#&gt; #   modalite_activite_principale_entreprise &lt;chr&gt;,
-#&gt; #   caractere_productif_entreprise &lt;chr&gt;,
+#&gt; #   indice_monoactivite_entreprise &lt;lgl&gt;,
+#&gt; #   modalite_activite_principale_entreprise &lt;lgl&gt;,
+#&gt; #   caractere_productif_entreprise &lt;lgl&gt;,
 #&gt; #   date_validite_rubrique_niveau_entreprise_esa &lt;lgl&gt;,
 #&gt; #   tranche_chiffre_affaire_entreprise_esa &lt;lgl&gt;,
 #&gt; #   activite_principale_entreprise_esa &lt;lgl&gt;,
@@ -198,9 +203,8 @@
 #&gt; #   quatrieme_activite_secondaire_entreprise_esa &lt;lgl&gt;,
 #&gt; #   nature_mise_a_jour &lt;lgl&gt;, indicateur_mise_a_jour_1 &lt;lgl&gt;,
 #&gt; #   indicateur_mise_a_jour_2 &lt;lgl&gt;, indicateur_mise_a_jour_3 &lt;lgl&gt;,
-#&gt; #   date_mise_a_jour &lt;chr&gt;, type_evenement &lt;lgl&gt;, date_evenement &lt;lgl&gt;,
-#&gt; #   type_creation &lt;lgl&gt;, date_reactivation_etablissement &lt;lgl&gt;,
-#&gt; #   date_reactivation_entreprise &lt;lgl&gt;, …
+#&gt; #   date_mise_a_jour &lt;chr&gt;, created_at &lt;chr&gt;, updated_at &lt;chr&gt;,
+#&gt; #   longitude &lt;chr&gt;, latitude &lt;chr&gt;, geo_score &lt;chr&gt;, …
 #&gt; 
 #&gt; $spellcheck
 #&gt; NULL
@@ -216,14 +220,13 @@
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -231,13 +234,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

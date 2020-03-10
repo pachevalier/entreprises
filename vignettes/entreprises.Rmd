@@ -19,25 +19,8 @@ library(tibble)
 library(dplyr)
 ```
 
-## Get company
+## Get unitelegale
 
 ```{r}
-get_company(siret = "38235772100028") %>% head()
+get_unitelegale(siren = "382357721") %>% glimpse()
 ```
-
-## Get companies nearby
-
-```{r}
-get_nearby(latitude = 48.8503, longitude = 2.30831) %>%
-  dplyr::glimpse()
-```
-
-## Search companies by name
-
-```{r}
-search_company(string = "Paris Saint Germain") %>% 
-  magrittr::extract2("etablissement") %>% 
-  tibble::as_tibble() %>% 
-  dplyr::glimpse()
-```
-

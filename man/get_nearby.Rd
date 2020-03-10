@@ -4,8 +4,11 @@
 \alias{get_nearby}
 \title{Get all firms nearby a point}
 \usage{
-get_nearby(latitude, longitude,
-  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1")
+get_nearby(
+  latitude,
+  longitude,
+  endpoint = "https://entreprise.data.gouv.fr/api/sirene/v1"
+)
 }
 \arguments{
 \item{latitude}{a double}
